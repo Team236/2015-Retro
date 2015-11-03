@@ -1,6 +1,8 @@
 
 package org.usfirst.frc.team236.robot;
 
+import org.usfirst.frc.team236.robot.subsystems.Drive;
+
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -16,6 +18,7 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 public class Robot extends IterativeRobot {
 
 	public static OI oi;
+	public static Drive drive;
 
     Command autonomousCommand;
 
