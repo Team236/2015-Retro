@@ -30,15 +30,23 @@ public class Drive extends Subsystem {
     }
     
     public void initDefaultCommand() {
-        // Set the default command for a subsystem here. //setDefaultCommand(new MySpecialCommand()); setDefaultCommand(new DriveWithJoysticks());
+        // Set the default command for a subsystem here. 
+        //setDefaultCommand(new MySpecialCommand());
+        setDefaultCommand(new DriveWithJoysticks());
     }
     
     public void setLeftSpeed(double speed) {
         leftFrontMotor.set(speed);
         leftBackMotor.set(speed);
     }
+    
     public void setRightSpeed(double speed) {
         rightFrontMotor.set(speed);
         rightBackMotor.set(speed);
+    }
+    
+    public void stop() {
+        setLeftSpeed(0);
+        setRightSpeed(0);
     }
 } 
