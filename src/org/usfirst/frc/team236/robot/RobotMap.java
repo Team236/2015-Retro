@@ -16,7 +16,6 @@ public class RobotMap {
     // public static int rangefinderPort = 1;
     // public static int rangefinderModule = 1;
 
-    // TODO real values
     public class DriveMap {
         public static final int PWM_LEFT_FRONT = 0;
         public static final int PWM_LEFT_BACK = 1;
