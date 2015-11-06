@@ -18,7 +18,7 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 public class Robot extends IterativeRobot {
 
 	public static OI oi;
-	public static Drive drive;
+	public static Drive drive = new Drive();
 
     Command autonomousCommand;
 
