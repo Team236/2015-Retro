@@ -4,6 +4,7 @@ import org.usfirst.frc.team236.robot.RobotMap;
 import org.usfirst.frc.team236.robot.commands.DriveWithJoysticks;
 
 import edu.wpi.first.wpilibj.SpeedController;
+import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
@@ -22,11 +23,11 @@ public class Drive extends Subsystem {
     private SpeedController rightBackMotor;
     
     public Drive() {
-        Victor leftFrontMotor = new Victor(RobotMap.DriveMap.PWM_LEFT_FRONT);
-        Victor leftBackMotor = new Victor(RobotMap.DriveMap.PWM_LEFT_BACK);
+        leftFrontMotor = new Talon(RobotMap.DriveMap.PWM_LEFT_FRONT);
+        leftBackMotor = new Talon(RobotMap.DriveMap.PWM_LEFT_BACK);
         
-        Victor rightFrontMotor = new Victor(RobotMap.DriveMap.PWM_RIGHT_FRONT);
-        Victor rightBackMotor = new Victor(RobotMap.DriveMap.PWM_RIGHT_BACK);
+        rightFrontMotor = new Talon(RobotMap.DriveMap.PWM_RIGHT_FRONT);
+        rightBackMotor = new Talon(RobotMap.DriveMap.PWM_RIGHT_BACK);
     }
     
     public void initDefaultCommand() {
@@ -41,8 +42,8 @@ public class Drive extends Subsystem {
     }
     
     public void setRightSpeed(double speed) {
-        rightFrontMotor.set(speed);
-        rightBackMotor.set(speed);
+        rightFrontMotor.set(-speed);
+        rightBackMotor.set(-speed);
     }
     
     public void stop() {
