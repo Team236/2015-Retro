@@ -49,4 +49,9 @@ public class Drive extends Subsystem {
         setLeftSpeed(0);
         setRightSpeed(0);
     }
+    
+    public void setMotors(double leftSpeed, double rightSpeed) {
+        setLeftSpeed(leftSpeed);
+        setRightSpeed(rightSpeed);
+    }
 }
