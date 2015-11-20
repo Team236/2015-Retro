@@ -11,7 +11,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  *
  */
 public class Drive extends Subsystem {
-    
+
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
 
@@ -20,33 +20,33 @@ public class Drive extends Subsystem {
 
     private SpeedController rightFrontMotor;
     private SpeedController rightBackMotor;
-    
+
     public Drive() {
         leftFrontMotor = new Talon(RobotMap.DriveMap.PWM_LEFT_FRONT);
         leftBackMotor = new Talon(RobotMap.DriveMap.PWM_LEFT_BACK);
-        
+
         rightFrontMotor = new Talon(RobotMap.DriveMap.PWM_RIGHT_FRONT);
         rightBackMotor = new Talon(RobotMap.DriveMap.PWM_RIGHT_BACK);
     }
-    
+
     public void initDefaultCommand() {
-        // Set the default command for a subsystem here. 
-        //setDefaultCommand(new MySpecialCommand());
+        // Set the default command for a subsystem here.
+        // setDefaultCommand(new MySpecialCommand());
         setDefaultCommand(new DriveWithJoysticks());
     }
-    
+
     public void setLeftSpeed(double speed) {
         leftFrontMotor.set(speed);
         leftBackMotor.set(speed);
     }
-    
+
     public void setRightSpeed(double speed) {
         rightFrontMotor.set(-speed);
         rightBackMotor.set(-speed);
     }
-    
+
     public void stop() {
         setLeftSpeed(0);
         setRightSpeed(0);
     }
-} 
+}
