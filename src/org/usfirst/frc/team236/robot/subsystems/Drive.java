@@ -1,5 +1,6 @@
 package org.usfirst.frc.team236.robot.subsystems;
 
+import org.usfirst.frc.team236.robot.RobotMap;
 import org.usfirst.frc.team236.robot.commands.DriveWithJoysticks;
 
 import edu.wpi.first.wpilibj.SpeedController;
@@ -21,11 +22,11 @@ public class Drive extends Subsystem {
     private SpeedController rightBackMotor;
 
     public Drive() {
-        leftFrontMotor = new Talon(0);
-        leftBackMotor = new Talon(1);
+        leftFrontMotor = new Talon(RobotMap.DriveMap.PWM_LEFT_FRONT);
+        leftBackMotor = new Talon(RobotMap.DriveMap.PWM_LEFT_BACK);
 
-        rightFrontMotor = new Talon(2);
-        rightBackMotor = new Talon(3);
+        rightFrontMotor = new Talon(RobotMap.DriveMap.PWM_RIGHT_FRONT);
+        rightBackMotor = new Talon(RobotMap.DriveMap.PWM_RIGHT_BACK);
     }
 
     public void initDefaultCommand() {
