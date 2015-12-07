@@ -37,9 +37,11 @@ public class OI {
 
     public Joystick leftStick;
     public Joystick rightStick;
+    public Joystick controller;
 
     public OI() {
         leftStick = new Joystick(RobotMap.JoystickMap.PORT_LEFT);
         rightStick = new Joystick(RobotMap.JoystickMap.PORT_RIGHT);
+        controller = new Joystick(RobotMap.JoystickMap.PORT_CONTROLLER);
     }
 }
