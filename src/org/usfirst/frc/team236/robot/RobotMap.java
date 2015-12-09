@@ -22,6 +22,14 @@ public class RobotMap {
         public static final int PWM_LEFT_BACK = 1;
         public static final int PWM_RIGHT_FRONT = 2;
         public static final int PWM_RIGHT_BACK = 3;
+
+        public static final int DIO_ENCODER_RIGHT_A = 0;
+        public static final int DIO_ENCODER_RIGHT_B = 1;
+        public static final int DIO_ENCODER_LEFT_A = 2;
+        public static final int DIO_ENCODER_LEFT_B = 3;
+
+        public static final double DISTANCE_PER_PULSE = 0.07363108 / 12.0;
+
     }
 
     public class JoystickMap {

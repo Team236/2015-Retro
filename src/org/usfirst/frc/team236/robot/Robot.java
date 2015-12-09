@@ -1,6 +1,7 @@
 
 package org.usfirst.frc.team236.robot;
 
+import org.usfirst.frc.team236.robot.commands.Autonomous;
 import org.usfirst.frc.team236.robot.subsystems.Drive;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
@@ -30,6 +31,7 @@ public class Robot extends IterativeRobot {
         oi = new OI();
         // instantiate the command used for the autonomous period
         // autonomousCommand = new ExampleCommand();
+        autonomousCommand = new Autonomous();
     }
 
     public void disabledPeriodic() {

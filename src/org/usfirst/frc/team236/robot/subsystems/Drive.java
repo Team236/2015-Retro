@@ -3,6 +3,7 @@ package org.usfirst.frc.team236.robot.subsystems;
 import org.usfirst.frc.team236.robot.RobotMap;
 import org.usfirst.frc.team236.robot.commands.DriveWithJoysticks;
 
+import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -21,12 +22,21 @@ public class Drive extends Subsystem {
     private SpeedController rightFrontMotor;
     private SpeedController rightBackMotor;
 
+    private Encoder leftEncoder;
+    private Encoder rightEncoder;
+
     public Drive() {
         leftFrontMotor = new Talon(RobotMap.DriveMap.PWM_LEFT_FRONT);
         leftBackMotor = new Talon(RobotMap.DriveMap.PWM_LEFT_BACK);
 
         rightFrontMotor = new Talon(RobotMap.DriveMap.PWM_RIGHT_FRONT);
         rightBackMotor = new Talon(RobotMap.DriveMap.PWM_RIGHT_BACK);
+
+        leftEncoder = new Encoder(RobotMap.DriveMap.DIO_ENCODER_LEFT_A, RobotMap.DriveMap.DIO_ENCODER_LEFT_B);
+        rightEncoder = new Encoder(RobotMap.DriveMap.DIO_ENCODER_RIGHT_A, RobotMap.DriveMap.DIO_ENCODER_RIGHT_B);
+
+        leftEncoder.setDistancePerPulse(RobotMap.DriveMap.DISTANCE_PER_PULSE);
+        rightEncoder.setDistancePerPulse(RobotMap.DriveMap.DISTANCE_PER_PULSE);
     }
 
     public void initDefaultCommand() {
@@ -49,9 +59,30 @@ public class Drive extends Subsystem {
         setLeftSpeed(0);
         setRightSpeed(0);
     }
-    
+
     public void setMotors(double leftSpeed, double rightSpeed) {
         setLeftSpeed(leftSpeed);
         setRightSpeed(rightSpeed);
+    }
+
+    public double getLeftEncoder() {
+        return leftEncoder.getDistance();
+    }
+
+    public double getRightEncoder() {
+        return rightEncoder.getDistance();
+    }
+
+    public double getLeftEncoderRaw() {
+        return leftEncoder.getRaw();
+    }
+
+    public double getRightEncoderRaw() {
+        return rightEncoder.getRaw();
+    }
+
+    public void zeroEncoders() {
+        leftEncoder.reset();
+        rightEncoder.reset();
     }
 }
