@@ -7,6 +7,7 @@ import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  *
@@ -48,11 +49,13 @@ public class Drive extends Subsystem {
     public void setLeftSpeed(double speed) {
         leftFrontMotor.set(speed);
         leftBackMotor.set(speed);
+        SmartDashboard.putNumber("Left Speed", speed);
     }
 
     public void setRightSpeed(double speed) {
         rightFrontMotor.set(-speed);
         rightBackMotor.set(-speed);
+        SmartDashboard.putNumber("Right Speed", -speed);
     }
 
     public void stop() {
@@ -73,11 +76,11 @@ public class Drive extends Subsystem {
         return rightEncoder.getDistance();
     }
 
-    public double getLeftEncoderRaw() {
+    public int getLeftEncoderRaw() {
         return leftEncoder.getRaw();
     }
 
-    public double getRightEncoderRaw() {
+    public int getRightEncoderRaw() {
         return rightEncoder.getRaw();
     }
 

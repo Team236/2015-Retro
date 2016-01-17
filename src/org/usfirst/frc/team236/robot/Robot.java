@@ -2,12 +2,14 @@
 package org.usfirst.frc.team236.robot;
 
 import org.usfirst.frc.team236.robot.commands.Autonomous;
+import org.usfirst.frc.team236.robot.commands.ZeroDriveEncoders;
 import org.usfirst.frc.team236.robot.subsystems.Drive;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -58,6 +60,7 @@ public class Robot extends IterativeRobot {
         // this line or comment it out.
         if (autonomousCommand != null)
             autonomousCommand.cancel();
+
     }
 
     /**
@@ -65,7 +68,9 @@ public class Robot extends IterativeRobot {
      * to reset subsystems before shutting down.
      */
     public void disabledInit() {
-
+        Scheduler.getInstance().run();
+        SmartDashboard.putNumber("Left Stick Y", oi.leftStick.getY());
+        SmartDashboard.putNumber("Right Stick Y", oi.rightStick.getY());
     }
 
     /**
@@ -73,6 +78,13 @@ public class Robot extends IterativeRobot {
      */
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
+        SmartDashboard.putNumber("Left Stick Y", oi.leftStick.getY());
+        SmartDashboard.putNumber("Right Stick Y", oi.rightStick.getY());
+
+        SmartDashboard.putInt("Left Encoder", drive.getLeftEncoderRaw());
+        SmartDashboard.putInt("Right Encoder", drive.getRightEncoderRaw());
+
+        SmartDashboard.putData(new ZeroDriveEncoders());
     }
 
     /**
