@@ -20,6 +20,13 @@ for the kids without code experience to understand it at some level.
 
 ##### DIO
 
+| Port | Subsystem | Assignment
+|------|-----------|-----------
+| 0 | Drive | Right Encoder channel A
+| 1 | Drive | Right Encoder channel B
+| 2 | Drive | Left Encoder channel A
+| 3 | Drive | Left Encoder channel B
+
 ##### USB
 | Port | Assignment
 |------|-----------
