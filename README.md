@@ -5,10 +5,7 @@ Currently only drives the robot.
 
 
 ### Ports
-Currently, the port numbers for drive are not imported from RobotMap. Instead,
-they are replaced with their real values. This is bad form, and not how we code
-our robots, but I am doing this because this is demo code. It makes it easier
-for the kids without code experience to understand it at some level.
+
 ##### PWM
 
 | Port | Subsystem | Assignment
