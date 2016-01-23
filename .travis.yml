@@ -1,0 +1,8 @@
+sudo: false
+language: java
+#before_install:
+#  cp -a /home/travis/build/bob80333/swerve-drive/SwerveDrive/src /home/travis/build/bob80333/swerve-drive/src
+install: git clone https://github.com/bob80333/wpilib-mirror.git ~/wpilib
+script: 
+ - "ant jar"
+jdk: oraclejdk8
