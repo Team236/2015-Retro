@@ -1,9 +1,7 @@
-# 2015-Retro
-[![Build Status](https://travis-ci.org/Team236/2015-Retro.svg?branch=master)](https://travis-ci.org/Team236/2015-Retro)
+# 2015-Retro [![Build Status](https://travis-ci.org/Team236/2015-Retro.svg?branch=master)](https://travis-ci.org/Team236/2015-Retro)
 Retro support for the 2015 bot for demo purposes
 
 Currently only drives the robot.
-
 
 ### Ports
 
